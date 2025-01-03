@@ -40,6 +40,12 @@ if __name__ == '__main__':
                 print("message.topic: ", msg.topic())
                 print("message key: ", msg.key())
                 print("value: ", msg.value())
+                print("value type: ", type(msg.value()))
+                print("message decoded: ", msg.value().decode('utf-8'))
+
+                # TODO
+                # may have to decode using kafka avro
+                
                 # print("Consumed event from topic {topic}: key = {key:12} value = {value:12}".format(
                 #     topic=msg.topic(), key=msg.key(),
                 #     value=msg.value()
