@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from confluent_kafka import Consumer
+import fastavro
 
 if __name__ == '__main__':
 
@@ -41,7 +42,10 @@ if __name__ == '__main__':
                 print("message key: ", msg.key())
                 print("value: ", msg.value())
                 print("value type: ", type(msg.value()))
-                print("message decoded: ", msg.value().decode('utf-8'))
+                print("message decoded: ", msg.value())
+                reader = fastavro.reader(msg.value().decode('utf-8'))
+                for record in reader:
+                    print(record)
 
                 # TODO
                 # may have to decode using kafka avro
