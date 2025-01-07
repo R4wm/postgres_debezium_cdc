@@ -29,18 +29,18 @@ try:
     last_id += 1
     rando_str =  ''.join(secrets.choice(string.ascii_uppercase + string.digits) for i in range(N))
 
-    #INSERT into the db
-    breakpoint()
-    insert_stmt = 'INSERT INTO student(id, name) VALUES(%s, %s)'
-    cursor.execute(insert_stmt, (id, rando_str))
-    print("inserted {last_id} {rando_str} into exampledb")
+    # #INSERT into the db
+    # breakpoint()
+    # insert_stmt = 'INSERT INTO student(id, name) VALUES(%s, %s)'
+    # cursor.execute(insert_stmt, (id, rando_str))
+    # print("inserted {last_id} {rando_str} into exampledb")
 
-    # SELECT STMT
-    select_query = "SELECT * FROM student"
-    cursor.execute(select_query)
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    # # SELECT STMT
+    # select_query = "SELECT * FROM student"
+    # cursor.execute(select_query)
+    # rows = cursor.fetchall()
+    # for row in rows:
+    #     print(row)
 
     update_query = "UPDATE student set name=%s where id=%s"
     name = 'superman'
